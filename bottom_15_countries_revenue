@@ -1,0 +1,12 @@
+-- top 15_movies contributed the least to revenue gain
+SELECT 
+	f.title,
+	SUM (p.amount) AS total_revenue,
+	f.rating
+FROM film AS f
+JOIN inventory AS i ON f.film_id = i.film_id
+JOIN rental AS r ON i.inventory_id = r.inventory_id
+JOIN payment AS p ON r.rental_id = p.rental_id
+GROUP BY f.title, f.rental_rate, f.rating
+ORDER BY total_revenue ASC
+LIMIT 15 ;
