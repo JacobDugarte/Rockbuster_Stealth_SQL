@@ -1,0 +1,6 @@
+SELECT	MODE() WITHIN GROUP ( ORDER BY rating) AS mode_rating,
+	MODE() WITHIN GROUP ( ORDER BY title) AS mode_title,
+	MODE() WITHIN GROUP ( ORDER BY description) AS mode_description,
+	MODE() WITHIN GROUP ( ORDER BY release_year) AS mode_release_year,
+	MODE() WITHIN GROUP ( ORDER BY language_id) AS mode_anguage,
+FROM film	
